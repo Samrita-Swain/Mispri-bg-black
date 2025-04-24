@@ -152,16 +152,17 @@ nav ul::-webkit-scrollbar {
     display: flex;
     align-items: center;
     padding: 16px;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #333333;
     transition: background-color 0.2s ease;
     font-size: 15px;
-    color: #333;
+    color: white;
     font-weight: 500;
     text-decoration: none;
+    background-color: #121212;
   }
 
   .mobile-sidebar-item:hover {
-    background-color: #f9fafb;
+    background-color: #1e1e1e;
   }
 
   .mobile-badge-new {

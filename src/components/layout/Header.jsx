@@ -184,19 +184,19 @@ const Header = () => {
                   {mobileMoreMenuOpen && (
                     <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
                       <div
-                        className="fixed top-0 right-0 h-full w-4/5 max-w-xs bg-white shadow-lg z-50 overflow-y-auto slide-in-right"
+                        className="fixed top-0 right-0 h-full w-4/5 max-w-xs bg-[#121212] shadow-lg z-50 overflow-y-auto slide-in-right"
                         ref={mobileDropdownRef}
                         onClick={(e) => e.stopPropagation()}
                       >
                         {/* User Greeting */}
-                        <div className="p-4 flex items-center border-b border-gray-200">
+                        <div className="p-4 flex items-center border-b border-[#333333]">
                           <div className="w-12 h-12 rounded-full bg-[#2D7D90] flex items-center justify-center mr-3">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg>
                           </div>
                           <div>
-                            <p className="text-gray-700 font-medium">Hey Guest!</p>
+                            <p className="text-white font-medium">Hey Guest!</p>
                             <button onClick={() => { setMobileMoreMenuOpen(false); setSignInModalOpen(true); }} className="text-[#ffcc85] text-sm font-medium">Login in Now!</button>
                           </div>
                         </div>
@@ -230,7 +230,7 @@ const Header = () => {
 
                         {/* Close Button */}
                         <button
-                          className="absolute top-4 right-4 text-gray-500"
+                          className="absolute top-4 right-4 text-white"
                           onClick={() => setMobileMoreMenuOpen(false)}
                         >
                           <FaTimes className="h-5 w-5" />
@@ -398,11 +398,11 @@ const Header = () => {
         {/* Mobile Sidebar Menu */}
         {moreMenuOpen && windowWidth < 768 && (
           <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
-            <div className="fixed top-0 left-0 h-full w-full md:w-4/5 md:max-w-xs bg-white shadow-lg z-50 overflow-y-auto slide-in-left">
+            <div className="fixed top-0 left-0 h-full w-full md:w-4/5 md:max-w-xs bg-[#121212] shadow-lg z-50 overflow-y-auto slide-in-left">
               {/* Header with back button */}
-              <div className="p-4 flex items-center border-b border-gray-200">
+              <div className="p-4 flex items-center border-b border-[#333333]">
                 <button
-                  className="text-gray-500 mr-3"
+                  className="text-white mr-3"
                   onClick={() => setMoreMenuOpen(false)}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -410,13 +410,13 @@ const Header = () => {
                   </svg>
                 </button>
                 <div className="flex items-center">
-                  <div className="w-8 h-8 rounded-full bg-[#ffcc85] flex items-center justify-center mr-2">
+                  <div className="w-8 h-8 rounded-full bg-[#2D7D90] flex items-center justify-center mr-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                   </div>
                   <div>
-                    <p className="text-gray-700 text-sm">Hey Guest!</p>
+                    <p className="text-white text-sm">Hey Guest!</p>
                     <button onClick={() => { setMoreMenuOpen(false); setSignInModalOpen(true); }} className="text-[#ffcc85] text-xs font-medium">Sign In</button>
                   </div>
                 </div>
@@ -424,78 +424,78 @@ const Header = () => {
 
               {/* Menu Items */}
               <div className="py-2">
-                <Link to="/express-delivery" className="flex items-center justify-between px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <span className="text-gray-700">Express Delivery</span>
+                <Link to="/express-delivery" className="mobile-sidebar-item flex items-center justify-between" onClick={() => setMoreMenuOpen(false)}>
+                  <span>Express Delivery</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </Link>
 
-                <Link to="/flowers" className="flex items-center justify-between px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <span className="text-gray-700">Flowers</span>
+                <Link to="/flowers" className="mobile-sidebar-item flex items-center justify-between" onClick={() => setMoreMenuOpen(false)}>
+                  <span>Flowers</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </Link>
 
-                <Link to="/cakes" className="flex items-center justify-between px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <span className="text-gray-700">Cakes</span>
+                <Link to="/cakes" className="mobile-sidebar-item flex items-center justify-between" onClick={() => setMoreMenuOpen(false)}>
+                  <span>Cakes</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </Link>
 
-                <Link to="/birthday" className="flex items-center justify-between px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <span className="text-gray-700">Birthday</span>
+                <Link to="/birthday" className="mobile-sidebar-item flex items-center justify-between" onClick={() => setMoreMenuOpen(false)}>
+                  <span>Birthday</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </Link>
 
-                <Link to="/anniversary" className="flex items-center justify-between px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <span className="text-gray-700">Anniversary</span>
+                <Link to="/anniversary" className="mobile-sidebar-item flex items-center justify-between" onClick={() => setMoreMenuOpen(false)}>
+                  <span>Anniversary</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </Link>
 
-                <Link to="/gifts" className="flex items-center justify-between px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <span className="text-gray-700">Gifts</span>
+                <Link to="/gifts" className="mobile-sidebar-item flex items-center justify-between" onClick={() => setMoreMenuOpen(false)}>
+                  <span>Gifts</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </Link>
 
-                <Link to="/personalised" className="flex items-center justify-between px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <span className="text-gray-700">Personalised</span>
+                <Link to="/personalised" className="mobile-sidebar-item flex items-center justify-between" onClick={() => setMoreMenuOpen(false)}>
+                  <span>Personalised</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </Link>
 
-                <Link to="/plants" className="flex items-center justify-between px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <span className="text-gray-700">Plants</span>
+                <Link to="/plants" className="mobile-sidebar-item flex items-center justify-between" onClick={() => setMoreMenuOpen(false)}>
+                  <span>Plants</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </Link>
 
-                <Link to="/combos" className="flex items-center justify-between px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <span className="text-gray-700">Combos</span>
+                <Link to="/combos" className="mobile-sidebar-item flex items-center justify-between" onClick={() => setMoreMenuOpen(false)}>
+                  <span>Combos</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </Link>
 
-                <Link to="/international" className="flex items-center justify-between px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <span className="text-gray-700">International</span>
+                <Link to="/international" className="mobile-sidebar-item flex items-center justify-between" onClick={() => setMoreMenuOpen(false)}>
+                  <span>International</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </Link>
 
-                <Link to="/occasions" className="flex items-center justify-between px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <span className="text-gray-700">Occasions</span>
+                <Link to="/occasions" className="mobile-sidebar-item flex items-center justify-between" onClick={() => setMoreMenuOpen(false)}>
+                  <span>Occasions</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                   </svg>
@@ -503,66 +503,66 @@ const Header = () => {
               </div>
 
               {/* Additional Options */}
-              <div className="border-t border-gray-200 mt-4">
-                <button className="flex items-center px-4 py-3 border-b border-gray-100 w-full text-left" onClick={() => { setMoreMenuOpen(false); setSignInModalOpen(true); }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#2D7D90]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="border-t border-[#333333] mt-4">
+                <button className="mobile-sidebar-item w-full text-left" onClick={() => { setMoreMenuOpen(false); setSignInModalOpen(true); }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#ffcc85]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
-                  <span className="text-gray-700">Sign In</span>
+                  <span>Sign In</span>
                 </button>
 
-                <Link to="/refer-earn" className="flex items-center px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#2D7D90]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <Link to="/refer-earn" className="mobile-sidebar-item" onClick={() => setMoreMenuOpen(false)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#ffcc85]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-gray-700">Refer And Earn</span>
+                  <span>Refer And Earn</span>
                 </Link>
 
-                <Link to="/track-order" className="flex items-center px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#2D7D90]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <Link to="/track-order" className="mobile-sidebar-item" onClick={() => setMoreMenuOpen(false)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#ffcc85]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                   </svg>
-                  <span className="text-gray-700">Track Order</span>
+                  <span>Track Order</span>
                 </Link>
 
-                <Link to="/corporate-gifts" className="flex items-center px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#2D7D90]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <Link to="/corporate-gifts" className="mobile-sidebar-item" onClick={() => setMoreMenuOpen(false)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#ffcc85]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <span className="text-gray-700">Corporate Gifts</span>
+                  <span>Corporate Gifts</span>
                 </Link>
 
-                <Link to="/franchise" className="flex items-center px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#2D7D90]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <Link to="/franchise" className="mobile-sidebar-item" onClick={() => setMoreMenuOpen(false)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#ffcc85]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
-                  <span className="text-gray-700">Franchise Enquiry</span>
+                  <span>Franchise Enquiry</span>
                 </Link>
 
-                <Link to="/coupons" className="flex items-center px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#2D7D90]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <Link to="/coupons" className="mobile-sidebar-item" onClick={() => setMoreMenuOpen(false)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#ffcc85]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
                   </svg>
-                  <span className="text-gray-700">Coupons</span>
+                  <span>Coupons</span>
                 </Link>
 
-                <Link to="/call-us" className="flex items-center px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#2D7D90]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <Link to="/call-us" className="mobile-sidebar-item" onClick={() => setMoreMenuOpen(false)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#ffcc85]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  <span className="text-gray-700">Call Us</span>
+                  <span>Call Us</span>
                 </Link>
 
-                <Link to="/whatsapp" className="flex items-center px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <FaWhatsapp className="h-5 w-5 mr-3 text-[#2D7D90]" />
-                  <span className="text-gray-700">WhatsApp</span>
+                <Link to="/whatsapp" className="mobile-sidebar-item" onClick={() => setMoreMenuOpen(false)}>
+                  <FaWhatsapp className="h-5 w-5 mr-3 text-[#ffcc85]" />
+                  <span>WhatsApp</span>
                 </Link>
 
-                <Link to="/contact-us" className="flex items-center px-4 py-3 border-b border-gray-100" onClick={() => setMoreMenuOpen(false)}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#2D7D90]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <Link to="/contact-us" className="mobile-sidebar-item" onClick={() => setMoreMenuOpen(false)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#ffcc85]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                   </svg>
-                  <span className="text-gray-700">Contact Us</span>
+                  <span>Contact Us</span>
                 </Link>
               </div>
             </div>
