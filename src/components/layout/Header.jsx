@@ -572,12 +572,12 @@ const Header = () => {
         {/* Location Popup */}
         {locationPopupOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-            <div className="bg-white rounded-lg shadow-xl w-full max-w-md mx-4 overflow-hidden">
-              <div className="p-4 bg-[#ffcc8520] border-b border-[#ffcc8540]">
+            <div className="bg-[#2d2d2d] rounded-lg shadow-xl w-full max-w-md mx-4 overflow-hidden">
+              <div className="p-4 bg-[#2d2d2d] border-b border-[#444444]">
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-medium text-gray-800">Enter delivery location</h3>
+                  <h3 className="text-lg font-medium text-white">Enter delivery location</h3>
                   <button
-                    className="text-gray-500 hover:text-gray-700"
+                    className="text-white hover:text-gray-200"
                     onClick={() => setLocationPopupOpen(false)}
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -585,19 +585,19 @@ const Header = () => {
                     </svg>
                   </button>
                 </div>
-                <p className="text-sm text-gray-600 mt-1">30-min delivery now live in some areas</p>
+                <p className="text-sm text-gray-300 mt-1">30-min delivery now live in some areas</p>
               </div>
 
-              <div className="p-4">
-                <div className="flex items-center border rounded-md overflow-hidden">
-                  <div className="px-3 py-2 bg-gray-50 border-r">
+              <div className="p-4 bg-[#2d2d2d]">
+                <div className="flex items-center rounded-md overflow-hidden">
+                  <div className="px-3 py-2 bg-[#1e1e1e] border-r border-[#444444]">
                     <img src="https://cdn-icons-png.flaticon.com/512/3909/3909444.png" alt="India Flag" className="w-6 h-4" />
-                    <span className="text-xs text-gray-500 block mt-1">Ind</span>
+                    <span className="text-xs text-gray-400 block mt-1">Ind</span>
                   </div>
                   <input
                     type="text"
                     placeholder="Enter Address / Location"
-                    className="flex-1 p-2 focus:outline-none"
+                    className="flex-1 p-2 bg-white text-black focus:outline-none focus:ring-1 focus:ring-[#ffcc85]"
                     value={deliveryAddress}
                     onChange={(e) => setDeliveryAddress(e.target.value)}
                   />
@@ -605,7 +605,7 @@ const Header = () => {
 
                 <div className="mt-4 flex justify-between items-center">
                   <button
-                    className="flex items-center text-blue-600 text-sm font-medium"
+                    className="flex items-center text-[#4299e1] text-sm font-medium hover:text-[#63b3ed]"
                     onClick={handleUseCurrentLocation}
                   >
                     <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
