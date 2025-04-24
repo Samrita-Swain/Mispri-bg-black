@@ -1,0 +1,354 @@
+/* Header.css */
+
+/* FlowerAura style header */
+header {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Main navigation menu */
+nav ul {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+nav ul::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Logo styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 40px;
+}
+
+/* Dropdown menu animation */
+.dropdown-menu-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.dropdown-menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms, transform 200ms;
+}
+
+.dropdown-menu-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-menu-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 200ms, transform 200ms;
+}
+
+/* Mobile Dropdown menu */
+.more-dropdown {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  display: flex;
+}
+
+.more-dropdown-content {
+  width: 80%;
+  max-width: 320px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  animation: slideInLeft 0.3s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Desktop Dropdown menu */
+.more-dropdown-desktop {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 50;
+  margin-top: 0.5rem;
+  animation: fadeIn 0.2s ease-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.more-dropdown-content-desktop {
+  max-height: 80vh;
+  overflow-y: auto;
+  background-color: white;
+}
+
+/* Dropdown animation */
+.more-dropdown-desktop,
+.mobile-more-dropdown {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dropdown positioning */
+.more-dropdown-desktop .more-dropdown-content-desktop,
+.mobile-more-dropdown > div {
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+/* Ensure dropdown stays visible */
+.more-dropdown-desktop,
+.mobile-more-dropdown {
+  display: block;
+  pointer-events: auto;
+}
+
+/* Dropdown styling */
+.more-dropdown-desktop,
+.mobile-more-dropdown {
+  transition: opacity 0.2s ease-out;
+}
+
+/* Mobile sidebar menu styling */
+@media (max-width: 768px) {
+  .menu-item-desktop {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .menu-item-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .mobile-sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #e5e7eb;
+    transition: background-color 0.2s ease;
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .mobile-sidebar-item:hover {
+    background-color: #f9fafb;
+  }
+
+  .mobile-badge-new {
+    background-color: #ffcc85;
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+    margin-left: auto;
+    font-weight: 500;
+  }
+
+  .slide-in-left {
+    animation: slideInLeft 0.3s ease-out;
+  }
+
+  .slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-item-desktop {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+}
+
+.menu-item-desktop:hover {
+  background-color: #f9fafb;
+}
+
+.menu-item-desktop:last-child {
+  border-bottom: none;
+}
+
+/* Badge styles */
+.badge-new {
+  background-color: #ffcc85;
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  margin-left: auto;
+  font-weight: 500;
+}
+
+/* Menu item hover effect */
+.menu-item {
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.menu-item:hover {
+  background-color: #f9fafb;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+/* Menu item icon */
+.menu-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  color: #ffcc85;
+}
+
+/* New badge style for dropdown */
+.badge-new {
+  background-color: #ffcc85;
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 9999px;
+  margin-left: auto;
+  font-weight: 500;
+}
+
+/* FlowerAura specific styles */
+.floweraura-header {
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.floweraura-logo {
+  height: 40px;
+}
+
+@media (max-width: 768px) {
+  .floweraura-logo {
+    height: 30px;
+  }
+
+  .floweraura-header {
+    padding: 8px 0;
+  }
+}
+
+.location-selector {
+  display: flex;
+  align-items: center;
+  background-color: #e6f7ff;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.location-flag {
+  width: 24px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.location-edit {
+  color: #ffcc85;
+  margin-left: 8px;
+}
+
+/* User greeting in dropdown */
+.user-greeting {
+  display: flex;
+  align-items: center;
+  padding: 20px 16px;
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #2D7D90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info p {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.login-link {
+  color: #2D7D90;
+  font-weight: 500;
+  font-size: 14px;
+}

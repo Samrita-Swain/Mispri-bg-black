@@ -1,0 +1,7 @@
+/* Custom styles beyond Tailwind CSS */
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

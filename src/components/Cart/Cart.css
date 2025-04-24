@@ -1,0 +1,112 @@
+/* Cart Styles */
+.empty-cart-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Empty Cart Message Styling */
+.empty-cart-main h2 {
+  color: #ffcc85;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.empty-cart-main p {
+  color: #ffcc85;
+  font-size: 20px;
+  margin-top: 0;
+}
+
+/* Continue Shopping Button */
+.continue-shopping-button {
+  background-color: #ffcc85 !important;
+  color: white !important;
+  padding: 12px 30px !important;
+  border-radius: 4px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  font-size: 16px !important;
+  display: inline-block !important;
+  text-align: center !important;
+  min-width: 200px !important;
+}
+
+.continue-shopping-button:hover {
+  background-color: #e6b876 !important;
+}
+
+/* Category Grid Styling */
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-image-container {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.category-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.category-item:hover .category-image-container img {
+  transform: scale(1.05);
+}
+
+.category-item h3 {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+/* Browse Categories Section */
+.empty-cart-main h2.text-2xl {
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  line-height: 35px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .grid-cols-6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-cols-6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .empty-cart-main h2 {
+    font-size: 22px;
+  }
+
+  .empty-cart-main p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-image-container {
+    height: 140px;
+  }
+
+  .empty-cart-main h2.text-2xl {
+    font-size: 24px;
+  }
+}

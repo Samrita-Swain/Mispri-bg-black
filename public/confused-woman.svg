@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="150" cy="120" r="80" fill="#D6E4FF"/>
+  
+  <!-- Woman figure -->
+  <g>
+    <!-- Head -->
+    <circle cx="150" cy="90" r="30" fill="#FFD8B4"/>
+    
+    <!-- Hair -->
+    <path d="M120 90C120 73.4315 133.431 60 150 60C166.569 60 180 73.4315 180 90C180 106.569 166.569 120 150 120" fill="#4A2C2A"/>
+    <path d="M120 90C120 73.4315 133.431 60 150 60C166.569 60 180 73.4315 180 90" stroke="#4A2C2A" stroke-width="8"/>
+    
+    <!-- Face -->
+    <circle cx="140" cy="85" r="3" fill="#4A2C2A"/> <!-- Left eye -->
+    <circle cx="160" cy="85" r="3" fill="#4A2C2A"/> <!-- Right eye -->
+    
+    <!-- Confused expression -->
+    <path d="M145 95C145 95 150 98 155 95" stroke="#4A2C2A" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Body -->
+    <rect x="135" y="120" width="30" height="60" fill="#FFA726"/> <!-- Shirt -->
+    <rect x="135" y="180" width="30" height="40" fill="#5C6BC0"/> <!-- Pants -->
+    
+    <!-- Arms -->
+    <rect x="110" y="130" width="25" height="10" fill="#FFA726" rx="5"/> <!-- Left arm -->
+    <rect x="165" y="130" width="25" height="10" fill="#FFA726" rx="5"/> <!-- Right arm -->
+    
+    <!-- Hands up in confusion -->
+    <circle cx="110" cy="130" r="8" fill="#FFD8B4"/> <!-- Left hand -->
+    <circle cx="190" cy="130" r="8" fill="#FFD8B4"/> <!-- Right hand -->
+  </g>
+  
+  <!-- Line at bottom -->
+  <line x1="100" y1="240" x2="200" y2="240" stroke="#333" stroke-width="2"/>
+</svg>
