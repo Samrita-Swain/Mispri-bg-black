@@ -8,7 +8,7 @@ import SignInModal from '../Auth/SignInModal';
 import './Header.css';
 import '../styles/HoverEffects.css';
 
-const Header = () => {
+const Header = ({ setIsMobileMenuOpen }) => {
   const [menuItems, setMenuItems] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [moreMenuOpen, setMoreMenuOpen] = useState(false);
@@ -68,6 +68,7 @@ const Header = () => {
 
       if (!clickedInMobileMenu && !clickedInMobileDropdown && mobileMoreMenuOpen) {
         setMobileMoreMenuOpen(false);
+        setIsMobileMenuOpen(false);
       }
 
       if (!clickedInLocationPopup && !clickedInLocationPopupContent && locationPopupOpen) {
@@ -79,7 +80,7 @@ const Header = () => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [desktopMoreMenuOpen, mobileMoreMenuOpen, locationPopupOpen]);
+  }, [desktopMoreMenuOpen, mobileMoreMenuOpen, locationPopupOpen, setIsMobileMenuOpen]);
 
   // Close menus when window is resized
   useEffect(() => {
@@ -90,9 +91,11 @@ const Header = () => {
       }
       if (mobileMoreMenuOpen) {
         setMobileMoreMenuOpen(false);
+        setIsMobileMenuOpen(false);
       }
       if (moreMenuOpen) {
         setMoreMenuOpen(false);
+        setIsMobileMenuOpen(false);
       }
       if (locationPopupOpen) {
         setLocationPopupOpen(false);
@@ -103,7 +106,7 @@ const Header = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [desktopMoreMenuOpen, mobileMoreMenuOpen, moreMenuOpen, locationPopupOpen]);
+  }, [desktopMoreMenuOpen, mobileMoreMenuOpen, moreMenuOpen, locationPopupOpen, setIsMobileMenuOpen]);
 
   useEffect(() => {
     // Set the main navigation items directly instead of fetching
@@ -150,7 +153,11 @@ const Header = () => {
             <div className="flex items-center w-full justify-between md:hidden">
               <button
                 className="text-[#ffcc85] flex items-center justify-center"
-                onClick={() => setMoreMenuOpen(!moreMenuOpen)}
+                onClick={() => {
+                  const newState = !moreMenuOpen;
+                  setMoreMenuOpen(newState);
+                  setIsMobileMenuOpen(newState);
+                }}
                 aria-label="Open menu"
               >
                 <FaBars className="text-xl" />
@@ -173,7 +180,11 @@ const Header = () => {
                   ref={mobileDotMenuRef}
                 >
                   <button
-                    onClick={() => setMobileMoreMenuOpen(!mobileMoreMenuOpen)}
+                    onClick={() => {
+                      const newState = !mobileMoreMenuOpen;
+                      setMobileMoreMenuOpen(newState);
+                      setIsMobileMenuOpen(newState);
+                    }}
                     className="text-gray-700"
                     aria-label="More options"
                   >
@@ -203,26 +214,38 @@ const Header = () => {
 
                         {/* Menu Items */}
                         <div>
-                          <Link to="/track-order" className="mobile-sidebar-item" onClick={() => setMobileMoreMenuOpen(false)}>
+                          <Link to="/track-order" className="mobile-sidebar-item" onClick={() => {
+                            setMobileMoreMenuOpen(false);
+                            setIsMobileMenuOpen(false);
+                          }}>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#ffcc85]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                             </svg>
                             <span>Track Order</span>
                           </Link>
 
-                          <Link to="/favourites" className="mobile-sidebar-item" onClick={() => setMobileMoreMenuOpen(false)}>
+                          <Link to="/favourites" className="mobile-sidebar-item" onClick={() => {
+                            setMobileMoreMenuOpen(false);
+                            setIsMobileMenuOpen(false);
+                          }}>
                             <FaHeart className="h-5 w-5 mr-3 text-[#ffcc85]" />
                             <span>My Favourites</span>
                           </Link>
 
-                          <Link to="/contact-us" className="mobile-sidebar-item" onClick={() => setMobileMoreMenuOpen(false)}>
+                          <Link to="/contact-us" className="mobile-sidebar-item" onClick={() => {
+                            setMobileMoreMenuOpen(false);
+                            setIsMobileMenuOpen(false);
+                          }}>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#ffcc85]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                             </svg>
                             <span>Contact Us</span>
                           </Link>
 
-                          <Link to="/whatsapp" className="mobile-sidebar-item" onClick={() => setMobileMoreMenuOpen(false)}>
+                          <Link to="/whatsapp" className="mobile-sidebar-item" onClick={() => {
+                            setMobileMoreMenuOpen(false);
+                            setIsMobileMenuOpen(false);
+                          }}>
                             <FaWhatsapp className="h-5 w-5 mr-3 text-[#ffcc85]" />
                             <span>WhatsApp</span>
                           </Link>
@@ -231,7 +254,10 @@ const Header = () => {
                         {/* Close Button */}
                         <button
                           className="absolute top-4 right-4 text-white"
-                          onClick={() => setMobileMoreMenuOpen(false)}
+                          onClick={() => {
+                            setMobileMoreMenuOpen(false);
+                            setIsMobileMenuOpen(false);
+                          }}
                         >
                           <FaTimes className="h-5 w-5" />
                         </button>
@@ -403,7 +429,10 @@ const Header = () => {
               <div className="p-4 flex items-center border-b border-[#333333]">
                 <button
                   className="text-white mr-3"
-                  onClick={() => setMoreMenuOpen(false)}
+                  onClick={() => {
+                    setMoreMenuOpen(false);
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
@@ -424,21 +453,30 @@ const Header = () => {
 
               {/* Menu Items */}
               <div className="py-2">
-                <Link to="/express-delivery" className="mobile-sidebar-item flex items-center justify-between" onClick={() => setMoreMenuOpen(false)}>
+                <Link to="/express-delivery" className="mobile-sidebar-item flex items-center justify-between" onClick={() => {
+                  setMoreMenuOpen(false);
+                  setIsMobileMenuOpen(false);
+                }}>
                   <span>Express Delivery</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </Link>
 
-                <Link to="/flowers" className="mobile-sidebar-item flex items-center justify-between" onClick={() => setMoreMenuOpen(false)}>
+                <Link to="/flowers" className="mobile-sidebar-item flex items-center justify-between" onClick={() => {
+                  setMoreMenuOpen(false);
+                  setIsMobileMenuOpen(false);
+                }}>
                   <span>Flowers</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </Link>
 
-                <Link to="/cakes" className="mobile-sidebar-item flex items-center justify-between" onClick={() => setMoreMenuOpen(false)}>
+                <Link to="/cakes" className="mobile-sidebar-item flex items-center justify-between" onClick={() => {
+                  setMoreMenuOpen(false);
+                  setIsMobileMenuOpen(false);
+                }}>
                   <span>Cakes</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>

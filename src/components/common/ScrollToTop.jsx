@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
 
-const ScrollToTop = () => {
+const ScrollToTop = ({ isMobileMenuOpen }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   // Show button when page is scrolled down
@@ -33,7 +33,7 @@ const ScrollToTop = () => {
 
   return (
     <>
-      {isVisible && (
+      {isVisible && !isMobileMenuOpen && (
         <button
           onClick={scrollToTop}
           className="fixed bottom-20 right-6 z-50 w-12 h-12 rounded-full bg-black flex items-center justify-center text-white shadow-lg hover:bg-[#1a1a1a] hover:translate-y-[-4px] transition-all duration-300"
